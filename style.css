@@ -20,6 +20,14 @@ body {
   color: var(--text-color);
   background: var(--bg-color);
 }
+/* custom scroll bar
+html::-webkit-scrollbar{
+  width:0.5rem;
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+  background: var(--main-color);
+} */
 a {
   text-decoration: none;
 }
@@ -545,5 +553,69 @@ header {
   .nav-link {
     display: block;
     margin: 1rem 0;
+  }
+}
+@media (max-width: 500px) {
+  .heading h2 br {
+    display: contents;
+  }
+  .service-content {
+    justify-content: center;
+  }
+  .product-content {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 380px) {
+  .service-content {
+    grid-template-columns: repeat(auto-fit, minmax(auto, 140px));
+  }
+  .ser-box img {
+    width: 80px;
+    height: 80px;
+  }
+  .home-text h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  .heading h2,
+  .book-data h2 {
+    font-size: 1.4rem;
+  }
+}
+
+.navbar {
+  animation: slide-in-top 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.home {
+  animation: puff-in-center 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+}
+@keyframes puff-in-center {
+  0% {
+    transform: scale(2);
+    filter: blur(4px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    filter: blur(0);
+    opacity: 1;
   }
 }
